@@ -3,8 +3,135 @@
 
 <h1>Assignment 2</h1>
 
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Your Information</div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="dailyServingsForm">
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">Gender</div>
+                        <div class="col-sm-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="genderRadio" id="genderRadio1" value="Male" checked>
+                                    Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="genderRadio" id="genderRadio2" value="Female">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">Age Group</div>
+                        <div class="col-sm-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio1" value="2 to 3" checked>
+                                    2 to 3
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio2" value="4 to 8">
+                                    4 to 8
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio3" value="9 to 13">
+                                    9 to 13
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio4" value="14 to 18">
+                                    14 to 18
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio5" value="19 to 30">
+                                    19 to 30
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio6" value="31 to 50">
+                                    31 to 50
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio7" value="51 to 70">
+                                    51 to 70
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ageRadio" id="ageRadio8" value="71+">
+                                    71+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Suggested Servings</div>
+            <div class="panel-body">
+                <div id="calculationOutput"></div>
+                <canvas id="servingsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Random Tips For Better Eating</div>
+            <div class="panel-body">
+                <div id="adviceOutput"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Books for your Age Group</div>
+            <div class="panel-body">
+                Here are some books that are relevant to the age and gender selected; to help you cook better meals.
+            </div>
+
+            <div id="bookOutput" class="list-group"></div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">Book Preview</div>
+            <div class="panel-body">
+                <div id="viewerCanvas" style="width: 100%; height: 500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 {% block body_scripts %}
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
 {% endblock %}}

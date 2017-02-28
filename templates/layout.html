@@ -28,22 +28,63 @@
 
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
 <div class="container-fluid">
 
-
-
     {% block body %}{% endblock %}
-
-
 
 </div> <!-- /container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/aws-sdk.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/aws-sdk-mobile-analytics.min.js') }}"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<script>
+    //Make sure region is 'us-east-1'
+    AWS.config.region = 'us-east-1';
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: 'us-east-1:1361bee3-7cb8-4446-a2b1-93a439f1afa5' //Amazon Cognito Identity Pool ID
+    });
+
+    var options = {
+        appId : '82de147bc5074bf8ae039f42a1f31165', //Amazon Mobile Analytics App ID
+        appTitle : APP_TITLE,              //Optional e.g. 'Example App'
+        appVersionName : APP_VERSION_NAME, //Optional e.g. '1.4.1'
+        appVersionCode : APP_VERSION_CODE, //Optional e.g. '42'
+        appPackageName : APP_PACKAGE_NAME  //Optional e.g. 'com.amazon.example'
+    };
+
+    var mobileAnalyticsClient = new AMA.Manager(options);
+</script>
 
 {% block body_scripts %}{% endblock %}
 
