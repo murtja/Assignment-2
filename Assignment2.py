@@ -43,7 +43,7 @@ def test():
         points.append(int(data_point.get('Sum')))
 
         dtime = data_point.get('Timestamp')
-        labels.append(time.mktime(dtime.timetuple()))
+        labels.append(str(time.mktime(dtime.timetuple())))
 
     dataset["data"] = points
 
