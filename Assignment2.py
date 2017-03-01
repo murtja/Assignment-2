@@ -14,6 +14,8 @@ def home():
 
 @app.route('/test')
 def test():
+
+    # http://russell.ballestrini.net/setting-region-programmatically-in-boto3/
     boto3.setup_default_session(region_name='us-east-1')
     cloudwatch = boto3.resource('cloudwatch', region_name='us-east-1')
     metric = cloudwatch.Metric('AWS/EC2', 'CPUUtilization')
