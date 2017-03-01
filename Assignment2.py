@@ -14,7 +14,8 @@ def home():
 
 @app.route('/test')
 def test():
-    cloudwatch = boto3.resource('cloudwatch')
+    boto3.setup_default_session(region_name='us-east-1')
+    cloudwatch = boto3.resource('cloudwatch', region_name='us-east-1')
     metric = cloudwatch.Metric('AWS/EC2', 'CPUUtilization')
 
     stats = metric.get_statistics(
