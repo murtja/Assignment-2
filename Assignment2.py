@@ -29,7 +29,7 @@ def test():
         Statistics=['Sum']
     )
 
-    data = stats.data.get('Datapoints')
+    data = stats.get('Datapoints')
     result = {}
     result["labels"] = []
     result["datasets"] = []
