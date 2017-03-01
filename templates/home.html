@@ -94,6 +94,11 @@
             <div class="panel-heading">Suggested Servings</div>
             <div class="panel-body">
                 <div id="calculationOutput"></div>
+                <div id="chartNotReadyDiv">
+                    <div class="jumbotron">
+                      <h2><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Choose age and gender first</h2>
+                    </div>
+                </div>
                 <canvas id="servingsChart"></canvas>
             </div>
         </div>
@@ -102,7 +107,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">Random Tips For Better Eating</div>
             <div class="panel-body">
-                <div id="adviceOutput"></div>
+                <div id="adviceOutput">
+                    <h3><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Loading...</h3></div>
             </div>
         </div>
     </div>
@@ -123,15 +129,15 @@
         <div class="panel panel-default">
             <div class="panel-heading">Book Preview</div>
             <div class="panel-body">
-                <div id="viewerCanvas" style="width: 100%; height: 500px"></div>
+                <div id="viewerCanvas" style="width: 100%; height: 400px">
+                    <div class="jumbotron">
+                      <h2><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Choose a book on the right side</h2>
+                      <p>After you have made age and gender selections, the suggestions are based on them.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 {% endblock %}
-
-{% block body_scripts %}
-<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-<script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
-{% endblock %}}
