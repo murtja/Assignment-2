@@ -19,7 +19,7 @@ def test():
     metric = cloudwatch.Metric('AWS/EC2', 'CPUUtilization')
 
     stats = metric.get_statistics(
-        StartTime=datetime(2017, 2, 27),
+        StartTime=datetime(2017, 2, 28),
         EndTime=datetime(2017, 3, 1),
         Period=60,
         Statistics=['Sum']
