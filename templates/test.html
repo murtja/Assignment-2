@@ -10,7 +10,7 @@
 {% block body_scripts %}
 
 <script>
-    var ctx = document.getElementById("myChart");
+    var ctx = document.getElementById("utilChart");
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {{chartData | safe}}
