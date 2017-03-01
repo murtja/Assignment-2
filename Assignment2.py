@@ -31,7 +31,6 @@ def test():
 
     data = stats.get('Datapoints')
     result = {}
-    result["labels"] = []
     result["datasets"] = []
 
     dataset = {}
@@ -45,6 +44,7 @@ def test():
 
     dataset["data"] = points
 
+    result["labels"] = labels
     result["datasets"].append(dataset)
 
     return render_template('test.html', chartData=json.dumps(result))
