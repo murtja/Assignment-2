@@ -1,5 +1,6 @@
 import boto3
 import json
+import time
 from datetime import datetime
 
 from flask import Flask, render_template
@@ -40,7 +41,9 @@ def test():
     labels = []
     for data_point in data:
         points.append(int(data_point.get('Sum')))
-        labels.append(data_point.get('Timestamp'))
+
+        dtime = data_point.get('Timestamp')
+        labels.append(time.mktime(dtime.timetuple()))
 
     dataset["data"] = points
 
