@@ -119,10 +119,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">Books for your Age Group</div>
             <div class="panel-body">
-                Here are some books that are relevant to the age and gender selected; to help you cook better meals.
+                <div id="bookOutput" class="list-group">
+                    <div class="jumbotron">
+                      <h2><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> Choose age and gender first</h2>
+                    </div>
+                </div>
             </div>
 
-            <div id="bookOutput" class="list-group"></div>
+
         </div>
     </div>
     <div class="col-md-8">
@@ -131,8 +135,8 @@
             <div class="panel-body">
                 <div id="viewerCanvas" style="width: 100%; height: 400px">
                     <div class="jumbotron">
-                      <h2><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Choose a book on the right side</h2>
-                      <p>After you have made age and gender selections, the suggestions are based on them.</p>
+                      <p>After you have made age and gender selections, book suggestions will appear on the left.
+                          Suggestions are based on age and gender.</p>
                     </div>
                 </div>
             </div>
